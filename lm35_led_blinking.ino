@@ -19,7 +19,7 @@ void setup() {
   
 }
 
-int flag1=0,flag2=0;
+int flag=0;
 
 void loop() 
 {
@@ -33,21 +33,21 @@ void loop()
   if(temp_val<=30)
   {
     //250ms - blinking
-    if(flag1)
+    if(flag==1)
     {
     LED_STATE = !LED_STATE;      //Invert LED state
     digitalWrite(LED_BUILTIN,LED_STATE); 
-    flag1=0;
+    flag=0;
     }
   }
   else
   {
     //on every 500ms
-    if(flag2==2)
+    if(flag==2)
     {
     LED_STATE = !LED_STATE;      //Invert LED state
     digitalWrite(LED_BUILTIN,LED_STATE); 
-    flag2=0;
+    flag=0;
     }
   }
   
@@ -57,7 +57,5 @@ ISR(TIMER1_COMPA_vect)
 {
   //for each 250ms
   TCNT1  = 0; //First, set the timer back to 0 so it resets for next interrupt
-  flag1++;
-  flag2++;
-  
+  flag++; 
 }
