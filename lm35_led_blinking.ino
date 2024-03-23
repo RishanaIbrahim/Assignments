@@ -37,10 +37,8 @@ void loop()
     {
     LED_STATE = !LED_STATE;      //Invert LED state
     digitalWrite(LED_BUILTIN,LED_STATE); 
-    }
-    if(flag1==2)
     flag1=0;
-    
+    }
   }
   else
   {
@@ -49,9 +47,8 @@ void loop()
     {
     LED_STATE = !LED_STATE;      //Invert LED state
     digitalWrite(LED_BUILTIN,LED_STATE); 
+    flag2=0;
     }
-    if(flag2==4)
-      flag2=0;
   }
   
 }
