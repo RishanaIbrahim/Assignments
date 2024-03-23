@@ -1,7 +1,7 @@
 // C++ code
 //
 const int lm35_pin = A0;  /* LM35 O/P pin */
-bool  LED_STATE=true;
+bool  LED_STATE=false;
 
 void setup() {
   Serial.begin(9600);
