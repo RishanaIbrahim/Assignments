@@ -1,5 +1,4 @@
-// C++ code
-//
+
 const int lm35_pin = A0;  /* LM35 O/P pin */
 bool  LED_STATE=false;
 
@@ -11,8 +10,8 @@ void setup() {
   TCCR1A = 0;                 // Reset entire TCCR1A to 0 
   TCCR1B = 0;                 // Reset entire TCCR1B to 0  
   TCCR1B |= B00000100;        //Set CS12 to 1 so we get prescalar 256  
-  TIMSK1 |= B00000010;        //Set OCIE1A to 1 so we enable compare match A  
-  OCR1A = 15625;//Finally we set compare register A to this value  
+  TIMSK1 |= B00000010;        //Set OCIE1A to 1 [ enable compare match A]  
+  OCR1A = 15625;// set compare register A to this value  
   
   sei();
   
